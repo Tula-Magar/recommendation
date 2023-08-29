@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import "./App.css";
 
-function Nav() {
+interface NavProps {
+  onToggleBackground: () => void;
+}
+
+function Nav({ onToggleBackground }: NavProps) {
   const [navbarLinksVisible, setNavbarLinksVisible] = useState(true);
-
   const toggleNavbarLinks = () => {
     setNavbarLinksVisible(!navbarLinksVisible);
   };
@@ -34,17 +36,18 @@ function Nav() {
           <button
             className="navbar-toggle"
             id="navbar-toggle"
-            onClick={toggleNavbarLinks}
-          >
+            onClick={toggleNavbarLinks}>
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
+        <div className="background-toggle">
+          <button onClick={onToggleBackground}>Toggle Background</button>
+        </div>
         <div
           className={`navbar-links ${navbarLinksVisible ? "visible" : ""}`}
-          id="navbar-links"
-        >
+          id="navbar-links">
           <Link className="link" smooth to="/#">
             Home
           </Link>

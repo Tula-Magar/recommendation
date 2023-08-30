@@ -28,7 +28,9 @@ function App() {
   };
 
   return (
-    <div className={isBlackAndWhite ? "black-and-white" : "color"}>
+    <div
+      data-testid="app-container"
+      className={isBlackAndWhite ? "black-and-white" : "color"}>
       <Router>
         <Nav onToggleBackground={handleToggleBackground} />
         <Routes>

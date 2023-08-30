@@ -95,27 +95,26 @@ const Home = () => {
             <button
               key={genre}
               className={selectedGenre === genre ? "active" : ""}
-              onClick={() => handleGenreChange(genre)}
-            >
+              onClick={() => handleGenreChange(genre)}>
               {genre}
             </button>
           ))}
         </div>
-        <div className="movie-list">
+        <div data-testid="movie-item" className="movie-list">
           {visibleMovies.map((movie) => (
-            <div className="movie" key={movie.id}>
+            <div className="movie" key={movie.id} data-testid="movie-item">
               <h2>{movie.title}</h2>
               <p>Genre: {movie.genre}</p>
             </div>
           ))}
         </div>
+
         <div className="pagination">
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index}
               className={currentPage === index + 1 ? "active" : ""}
-              onClick={() => handlePageChange(index + 1)}
-            >
+              onClick={() => handlePageChange(index + 1)}>
               {index + 1}
             </button>
           ))}

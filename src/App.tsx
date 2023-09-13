@@ -7,6 +7,7 @@ import "./App.css";
 
 import Nav from "./Nav";
 import Home from "./Home";
+import MovieDetailPage from "./MovieDetailPage";
 
 function App() {
   const [isBlackAndWhite, setIsBlackAndWhite] = useState(false);
@@ -35,6 +36,7 @@ function App() {
         <Nav onToggleBackground={handleToggleBackground} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<MovieDetailPage />} />
         </Routes>
       </Router>
     </div>

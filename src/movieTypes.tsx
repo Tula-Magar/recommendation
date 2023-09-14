@@ -3,5 +3,5 @@ export interface Movie {
   title: string;
   genre: string;
   imagesAndText: { posterURL: string; text: string }[];
-  // Add other properties if needed
+  Page: string; // Use 'Page' with a capital 'P'
 }

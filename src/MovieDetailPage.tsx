@@ -7,17 +7,27 @@ import { Movie } from "./movieTypes"; // Import your Movie type
 function MovieDetailPage() {
   const { id } = useParams();
 
+  // Find the movie with the given ID or set default values if not found
   const movie = (movies.find((movie) => movie.id === Number(id)) || {
     id: 0,
     title: "Not Found",
     genre: "N/A",
     imagesAndText: [],
-  }) as Movie; // Use type assertion to specify the type as Movie
+    Page: "", // Set to an empty string if the movie doesn't have a page
+  }) as Movie;
 
   return (
     <div>
       <h1>Movie Detail Page</h1>
-      <MovieDetail movie={movie} /> {/* Pass the movie prop */}
+      {movie.Page ? (
+        // Dynamically import and render the movie.Page component
+        (() => {
+          const MoviePageComponent = require(`./${movie.Page}`).default;
+          return <MoviePageComponent />;
+        })()
+      ) : (
+        <MovieDetail movie={movie} />
+      )}
     </div>
   );
 }

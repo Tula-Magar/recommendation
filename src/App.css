@@ -24,11 +24,24 @@ body {
   justify-content: space-between;
 }
 
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
 .link {
   color: white;
   margin-right: 10px;
   list-style: none;
   text-decoration: none;
+  padding: 10px;
+}
+
+.link:hover,
+.logo:hover {
+  color: #76e0bd;
+  border: #76e0bd 1px solid;
 }
 
 .navbar-toggle {

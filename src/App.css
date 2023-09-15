@@ -1,6 +1,6 @@
 .black-and-white {
   text-align: center;
-  background-color: #333;
+  background-color: #1c1c1f;
   color: #fff;
 }
 
@@ -17,7 +17,6 @@ body {
 }
 
 .navbar {
-  background-color: #333;
   color: white;
   padding: 10px;
   display: flex;
@@ -36,7 +35,6 @@ body {
 }
 
 .header {
-  background-color: #333;
   color: white;
   padding: 1rem;
 }

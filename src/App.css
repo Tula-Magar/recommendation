@@ -35,6 +35,56 @@ body {
   display: none;
 }
 
+.header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.genres {
+  margin-bottom: 1rem;
+}
+
+.genres button {
+  margin-right: 1rem;
+  background-color: #f4f4f4;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.genres button.active {
+  background-color: #333;
+  color: white;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.movie {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: left;
+  border: #76e0bd 2px solid;
+}
+
+.movie h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.movie p {
+  margin: 0.5rem 0;
+}
+
 /* Hide the navbar links on smaller screens */
 @media screen and (max-width: 768px) {
   .navbar {
@@ -79,53 +129,14 @@ body {
     background-color: #fff;
     margin: 5px 0 0 5px;
   }
-}
-
-.header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-}
-
-.main {
-  padding: 2rem;
-}
-
-.genres {
-  margin-bottom: 1rem;
-}
-
-.genres button {
-  margin-right: 1rem;
-  background-color: #f4f4f4;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.genres button.active {
-  background-color: #333;
-  color: white;
-}
-
-.movie-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.movie {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  text-align: left;
-}
-
-.movie h2 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.movie p {
-  margin: 0.5rem 0;
+  .movie-list {
+    display: block;
+    grid-template-columns: 1; /* Reset the grid columns */
+    gap: initial; /* Reset the gap */
+  }
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Reset the grid columns */
+    gap: 2rem; /* Reset the gap */
+  }
 }

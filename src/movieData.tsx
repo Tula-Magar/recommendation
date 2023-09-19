@@ -66,5 +66,4 @@ export const movies = [
   { id: 48, title: "Movie 48", genre: "Drama" },
   { id: 49, title: "Movie 49", genre: "Action" },
   { id: 50, title: "Movie 50", genre: "Comedy" },
-  // Add more movie data
 ];

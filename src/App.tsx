@@ -7,7 +7,7 @@ import "./App.css";
 
 import Nav from "./Nav";
 import Home from "./Home";
-import MovieDetailPage from "./MovieDetailPage";
+import Panel from "./Panel";
 
 function App() {
   const [isBlackAndWhite, setIsBlackAndWhite] = useState(false);
@@ -31,12 +31,13 @@ function App() {
   return (
     <div
       data-testid="app-container"
-      className={isBlackAndWhite ? "black-and-white" : "color"}>
+      className={isBlackAndWhite ? "black-and-white" : "color"}
+    >
       <Router>
         <Nav onToggleBackground={handleToggleBackground} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<MovieDetailPage />} />
+          <Route path="/movie/:id" element={<Panel />} />
         </Routes>
       </Router>
     </div>

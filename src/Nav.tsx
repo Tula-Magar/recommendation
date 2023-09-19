@@ -7,8 +7,14 @@ interface NavProps {
 
 function Nav({ onToggleBackground }: NavProps) {
   const [navbarLinksVisible, setNavbarLinksVisible] = useState(true);
+  const [firstPanelOpen, setFirstPanelOpen] = useState(false);
+
   const toggleNavbarLinks = () => {
     setNavbarLinksVisible(!navbarLinksVisible);
+  };
+
+  const toggleFirstPanel = () => {
+    setFirstPanelOpen(!firstPanelOpen);
   };
 
   useEffect(() => {
@@ -32,11 +38,22 @@ function Nav({ onToggleBackground }: NavProps) {
     <div>
       <nav className="navbar">
         <div className="navbar-brand">
-          <span className="logo">Your Logo</span>
+          <div className="logo-container">
+            {" "}
+            {/* Newly added container */}
+            <span className="logo">Your Logo</span>
+            {/* First Panel Toggle Button */}
+            <button className="first-panel-toggle" onClick={toggleFirstPanel}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
           <button
             className="navbar-toggle"
             id="navbar-toggle"
-            onClick={toggleNavbarLinks}>
+            onClick={toggleNavbarLinks}
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -47,7 +64,8 @@ function Nav({ onToggleBackground }: NavProps) {
         </div>
         <div
           className={`navbar-links ${navbarLinksVisible ? "visible" : ""}`}
-          id="navbar-links">
+          id="navbar-links"
+        >
           <Link className="link" smooth to="/#">
             Home
           </Link>
@@ -62,6 +80,10 @@ function Nav({ onToggleBackground }: NavProps) {
           </Link>
         </div>
       </nav>
+
+      {firstPanelOpen && (
+        <div className="first-panel-content">This is the first panel.</div>
+      )}
     </div>
   );
 }

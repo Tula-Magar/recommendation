@@ -18,7 +18,12 @@ export const movies = [
       { posterURL: "https://picsum.photos/200/300", text: "text2" },
     ],
   },
-  { id: 3, title: "Movie 3", Page: "test" },
+  {
+    id: 3,
+    title: "can you write me top ten srk movies with spoiler in each movies?",
+    Page: "bollywood/bollywoodData/srk",
+  },
+
   { id: 4, title: "Movie 4", genre: "Action" },
   { id: 5, title: "Movie 5", Page: "test" },
   { id: 6, title: "Movie 6", genre: "Drama" },

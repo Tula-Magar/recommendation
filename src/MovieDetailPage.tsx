@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import MovieDetail from "./MovieDetails";
 import { movies } from "./movieData";
 import { Movie } from "./movieTypes";
+import ActorMovieListPage from "./ActorMovieList/ActorMovieListPage";
 
 function MovieDetailPage() {
   const { id } = useParams();
@@ -54,8 +55,13 @@ function MovieDetailPage() {
 
       {movie.Page ? (
         (() => {
-          const MoviePageComponent = require(`./${movie.Page}`).default;
-          return <MoviePageComponent />;
+          try {
+            const actorMoviesData = require(`./${movie.Page}`).default;
+            return <ActorMovieListPage movies={actorMoviesData} />;
+          } catch (error) {
+            console.error("Failed to load actor movie data:", error);
+            return <div>Error loading actor movie data</div>;
+          }
         })()
       ) : (
         <MovieDetail movie={movie} />

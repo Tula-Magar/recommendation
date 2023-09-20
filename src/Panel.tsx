@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import MovieDetailPage from "./MovieDetailPage";
 import RelatedLinks from "./RelatedLinks";

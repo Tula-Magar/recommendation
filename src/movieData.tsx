@@ -24,10 +24,30 @@ export const movies = [
     Page: "bollywood/bollywoodData/srk",
   },
 
-  { id: 4, title: "Movie 4", genre: "Action" },
-  { id: 5, title: "Movie 5", Page: "test" },
-  { id: 6, title: "Movie 6", genre: "Drama" },
-  { id: 7, title: "Movie 7", genre: "Action" },
+  {
+    id: 4,
+    title:
+      "can you write me the top ten salmal khan film movies with spoilers in each movie?",
+    Page: "bollywood/bollywoodData/salmankhan",
+  },
+  {
+    id: 5,
+    title:
+      "can you write me all time top ten amir khan film movies with spoilers in each movie?",
+    Page: "bollywood/bollywoodData/amirkhan",
+  },
+  {
+    id: 6,
+    title:
+      "can you write me all time top ten akshay kumar film movies with spoilers in each movie?",
+    Page: "bollywood/bollywoodData/akshaykumar",
+  },
+  {
+    id: 7,
+    title:
+      "can you write me all time top ten ajay devgn film movies with spoilers in each movie?",
+    Page: "bollywood/bollywoodData/ajayDevgn",
+  },
   { id: 8, title: "Movie 8", genre: "Comedy" },
   { id: 9, title: "Movie 9", genre: "Drama" },
   { id: 10, title: "Movie 10", genre: "Action" },

@@ -43,7 +43,8 @@ const Home = () => {
             <button
               key={genre}
               className={selectedGenre === genre ? "active" : ""}
-              onClick={() => handleGenreChange(genre)}>
+              onClick={() => handleGenreChange(genre)}
+            >
               {genre}
             </button>
           ))}
@@ -53,8 +54,9 @@ const Home = () => {
             <Link
               to={`/movie/${movie.id}`} // Link to the movie details page
               key={movie.id}
-              className="movie"
-              data-testid="movie-item">
+              className="movie link"
+              data-testid="movie-item"
+            >
               <h2>{movie.title}</h2>
               <p>Genre: {movie.genre}</p>
             </Link>
@@ -66,7 +68,8 @@ const Home = () => {
             <button
               key={index}
               className={currentPage === index + 1 ? "active" : ""}
-              onClick={() => handlePageChange(index + 1)}>
+              onClick={() => handlePageChange(index + 1)}
+            >
               {index + 1}
             </button>
           ))}

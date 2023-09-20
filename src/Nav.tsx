@@ -66,16 +66,16 @@ function Nav({ onToggleBackground }: NavProps) {
           className={`navbar-links ${navbarLinksVisible ? "visible" : ""}`}
           id="navbar-links"
         >
-          <Link className="link" smooth to="/#">
+          <Link className="nav-link" smooth to="/#">
             Home
           </Link>
-          <Link className="link" smooth to="/#about">
+          <Link className="nav-link" smooth to="/#about">
             About
           </Link>
-          <Link className="link" smooth to="/#services">
+          <Link className="nav-link" smooth to="/#services">
             Services
           </Link>
-          <Link className="link" smooth to="/#contact">
+          <Link className="nav-link" smooth to="/#contact">
             Contact
           </Link>
         </div>

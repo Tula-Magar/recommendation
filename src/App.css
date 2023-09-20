@@ -1,6 +1,6 @@
 .black-and-white {
   text-align: center;
-  background-color: #1c1c1f;
+  background-color: #000;
   color: #fff;
 }
 
@@ -22,6 +22,7 @@ body {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  border-bottom: #76e0bd 1px solid;
 }
 
 .logo-container {
@@ -36,6 +37,13 @@ body {
 }
 
 .link {
+  margin-right: 10px;
+  list-style: none;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.nav-link {
   color: white;
   margin-right: 10px;
   list-style: none;
@@ -44,7 +52,8 @@ body {
 }
 
 .link:hover,
-.logo:hover {
+.logo:hover,
+.nav-link:hover {
   color: #76e0bd;
   border: #76e0bd 1px solid;
 }
@@ -124,16 +133,18 @@ body {
 }
 
 .panel {
-  border: 1px solid black;
+  border-top: 1px solid rgb(115, 207, 72);
   box-sizing: border-box;
 }
 
 .panel-1 {
   width: 25%;
+  border-right: 1px solid rgb(115, 207, 72);
 }
 
 .panel-2 {
   width: 50%;
+  border-right: 1px solid rgb(115, 207, 72);
 }
 
 .panel-3 {
@@ -144,6 +155,7 @@ body {
   list-style: none;
   padding: 10px;
   text-decoration: none;
+  text-align: left;
 }
 @media screen and (max-width: 900px) {
   .responsive-three-panel-page {

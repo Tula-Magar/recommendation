@@ -20,6 +20,7 @@ function MovieDetailPage() {
     title: "Not Found",
     genre: "N/A",
     imagesAndText: [],
+    IndividualMoviePage: "Not Found",
     Page: "",
   }) as Movie;
 
@@ -42,7 +43,12 @@ function MovieDetailPage() {
       <button onClick={goToNextMovie}>Next</button>
 
       {movie.Page ? (
-        <ActorMovieListPage link={{ link: movie.Page }} />
+        <ActorMovieListPage
+          link={{
+            link: movie.Page,
+            IndividualMoviePage: movie.IndividualMoviePage,
+          }}
+        />
       ) : (
         <MovieDetail movie={movie} />
       )}

@@ -21,6 +21,7 @@ export const movies = [
   {
     id: 3,
     title: "can you write me top ten srk movies with spoiler in each movies?",
+    IndividualMoviePage: "bollywood/IndividualMoviePage/DDLJ",
     Page: "bollywood/bollywoodData/srk",
   },
 

@@ -7,7 +7,7 @@ import "./App.css";
 
 import Nav from "./General/Nav";
 import Home from "./General/Home";
-import Panel from "./Layout/Panel";
+import ResponsiveThreePanelPage from "./Layout/ResponsiveThreePanelPage";
 
 function App() {
   const [isBlackAndWhite, setIsBlackAndWhite] = useState(false);
@@ -36,7 +36,7 @@ function App() {
         <Nav onToggleBackground={handleToggleBackground} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<Panel />} />
+          <Route path="/movie/:id" element={<ResponsiveThreePanelPage />} />
         </Routes>
       </Router>
     </div>

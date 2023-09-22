@@ -5,9 +5,9 @@ import Cookies from "js-cookie";
 // import logo from "./logo.svg";
 import "./App.css";
 
-import Nav from "./Nav";
-import Home from "./Home";
-import Panel from "./Panel";
+import Nav from "./General/Nav";
+import Home from "./General/Home";
+import Panel from "./Layout/Panel";
 
 function App() {
   const [isBlackAndWhite, setIsBlackAndWhite] = useState(false);

@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event"; //
 import App from "./App";
-import Home from "./Home";
+import Home from "./General/Home";
 
 type TestData = {
   ITEMS_PER_PAGE: number;

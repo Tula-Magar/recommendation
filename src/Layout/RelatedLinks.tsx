@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { movies } from "./movieData"; // Replace 'yourDataFile' with the actual path
+import { movies } from "../Data/movieData"; // Replace 'yourDataFile' with the actual path
 
 type RelatedLinksProps = {
   currentMovieId: number;

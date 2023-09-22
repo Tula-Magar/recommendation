@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import MovieDetailPage from "./MovieDetailPage";
+import MovieDetailPage from "../Movies/MovieDetailPage";
 import RelatedLinks from "./RelatedLinks";
 
 const ResponsiveThreePanelPage = () => {

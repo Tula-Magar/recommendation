@@ -1,5 +1,5 @@
 import React from "react";
-import { Movie } from "./movieTypes";
+import { Movie } from "../DataType/movieTypes";
 
 const MovieDetail: React.FC<{ movie: Movie }> = ({ movie }) => {
   return (

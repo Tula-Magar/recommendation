@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MovieDetail from "./MovieDetails";
-import { movies } from "./movieData";
-import { Movie } from "./movieTypes";
-import ActorMovieListPage from "./ActorMovieList/ActorMovieListPage";
+import { movies } from "../Data/movieData";
+import { Movie } from "../DataType/movieTypes";
+import ActorMovieListPage from "../ActorMovieList/ActorMovieListPage";
 
 function MovieDetailPage() {
   const { id } = useParams();
@@ -46,6 +46,11 @@ function MovieDetailPage() {
       ) : (
         <MovieDetail movie={movie} />
       )}
+      <button className="previous-movie" onClick={goToPreviousMovie}>
+        Previous
+      </button>
+
+      <button onClick={goToNextMovie}>Next</button>
     </div>
   );
 }

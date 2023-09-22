@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 
 import Nav from "./Nav";
@@ -31,8 +31,7 @@ function App() {
   return (
     <div
       data-testid="app-container"
-      className={isBlackAndWhite ? "black-and-white" : "color"}
-    >
+      className={isBlackAndWhite ? "black-and-white" : "color"}>
       <Router>
         <Nav onToggleBackground={handleToggleBackground} />
         <Routes>

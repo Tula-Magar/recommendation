@@ -1,6 +1,6 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { movies } from "./movieData"; // Replace 'yourDataFile' with the actual path
-import { type } from "os";
 
 type RelatedLinksProps = {
   currentMovieId: number;
@@ -24,7 +24,7 @@ const RelatedLinks = ({ currentMovieId }: RelatedLinksProps) => {
       <ul>
         {relatedMovies.map((movie) => (
           <li className="relatedMoviesList" key={movie.id}>
-            <Link className="link" to={`/movie/${movie.id}`}>
+            <Link className="relatedlink" to={`/movie/${movie.id}`}>
               {movie.title}
             </Link>
           </li>

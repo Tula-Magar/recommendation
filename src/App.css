@@ -43,6 +43,12 @@ body {
   padding: 10px;
 }
 
+.relatedlink {
+  list-style: none;
+  text-decoration: none;
+  padding: 10px;
+}
+
 .nav-link {
   color: white;
   margin-right: 10px;

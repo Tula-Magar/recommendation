@@ -1,4 +1,4 @@
-export default [
+const movies = [
   {
     title: "Dilwale Dulhania Le Jayenge (1995)",
     spoiler:
@@ -76,3 +76,5 @@ export default [
       "Jawan (SRK) is a soldier who is on a mission to protect his country from a terrorist organization. He is joined by his team, including a mysterious woman named Nayanthara. Jawan and his team are successful in defeating the terrorists, but Jawan is seriously injured in the process. He survives, but he is left with a facial disfigurement.",
   },
 ];
+
+export default movies;

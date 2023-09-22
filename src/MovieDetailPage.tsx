@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import MovieDetail from "./MovieDetails";
 import { movies } from "./movieData";
 import { Movie } from "./movieTypes";
@@ -7,16 +7,11 @@ import ActorMovieListPage from "./ActorMovieList/ActorMovieListPage";
 
 function MovieDetailPage() {
   const { id } = useParams();
-  const navigate = useNavigate(); // Get the navigate function to handle navigation
+  const navigate = useNavigate();
 
-  // Find the index of the current movie in the list
   const currentIndex = movies.findIndex((movie) => movie.id === Number(id));
-
-  // Calculate the index of the next and previous movies
-  const nextIndex = (currentIndex + 1) % movies.length; // Wrap around to the first movie
-  const prevIndex = (currentIndex - 1 + movies.length) % movies.length; // Wrap around to the last movie
-
-  // Get the next and previous movies
+  const nextIndex = (currentIndex + 1) % movies.length;
+  const prevIndex = (currentIndex - 1 + movies.length) % movies.length;
   const nextMovie = movies[nextIndex];
   const prevMovie = movies[prevIndex];
 
@@ -28,12 +23,10 @@ function MovieDetailPage() {
     Page: "",
   }) as Movie;
 
-  // Function to navigate to the previous movie
   const goToPreviousMovie = () => {
     navigate(`/movie/${prevMovie.id}`);
   };
 
-  // Function to navigate to the next movie
   const goToNextMovie = () => {
     navigate(`/movie/${nextMovie.id}`);
   };
@@ -41,12 +34,7 @@ function MovieDetailPage() {
   return (
     <div>
       <h1>Movie Detail Page</h1>
-      <div className="navigation-buttons">
-        <button onClick={() => window.history.back()}>Back</button>
-        <button onClick={() => window.history.forward()}>Forward</button>
-      </div>
 
-      {/* Style these as buttons */}
       <button className="previous-movie" onClick={goToPreviousMovie}>
         Previous
       </button>
@@ -54,25 +42,10 @@ function MovieDetailPage() {
       <button onClick={goToNextMovie}>Next</button>
 
       {movie.Page ? (
-        (() => {
-          try {
-            const actorMoviesData = require(`./${movie.Page}`).default;
-            return <ActorMovieListPage movies={actorMoviesData} />;
-          } catch (error) {
-            console.error("Failed to load actor movie data:", error);
-            return <div>Error loading actor movie data</div>;
-          }
-        })()
+        <ActorMovieListPage link={{ link: movie.Page }} />
       ) : (
         <MovieDetail movie={movie} />
       )}
-
-      {/* Style these as buttons */}
-      <button className="previous-movie" onClick={goToPreviousMovie}>
-        Previous
-      </button>
-
-      <button onClick={goToNextMovie}>Next</button>
     </div>
   );
 }

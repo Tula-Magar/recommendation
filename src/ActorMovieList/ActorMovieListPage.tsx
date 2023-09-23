@@ -3,6 +3,7 @@ import { Movie } from "../DataType/movieTypes";
 
 interface ActorMovieListPageProps {
   link: { link: string; IndividualMoviePage: string };
+  OnMovieClick?: () => void;
 }
 
 const ActorMovieListPage = (props: ActorMovieListPageProps) => {
@@ -36,6 +37,10 @@ const ActorMovieListPage = (props: ActorMovieListPageProps) => {
       .catch((error) => {
         console.error("Failed to load individual movie content:", error);
       });
+
+    if (props.OnMovieClick) {
+      props.OnMovieClick();
+    }
   };
 
   if (loading) {
@@ -56,7 +61,8 @@ const ActorMovieListPage = (props: ActorMovieListPageProps) => {
                 <li style={{ listStyle: "none" }} key={movie.title}>
                   <h2
                     style={{ cursor: "pointer" }}
-                    onClick={() => loadMovieContent(movie)}>
+                    onClick={() => loadMovieContent(movie)}
+                  >
                     {movie.title}
                   </h2>
                   <p>{movie.spoiler}</p>

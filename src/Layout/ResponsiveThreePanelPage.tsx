@@ -8,7 +8,7 @@ const ResponsiveThreePanelPage = () => {
   const currentMovieId = Number(id);
 
   return (
-    <div className="responsive-three-panel-page">
+    <div key={currentMovieId} className="responsive-three-panel-page">
       <div className="panel panel-1">This is the first panel.</div>
       <div className="panel panel-2">
         <MovieDetailPage />

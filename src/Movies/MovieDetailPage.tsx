@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MovieDetail from "./MovieDetails";
 import { movies } from "../Data/movieData";
@@ -6,6 +6,8 @@ import { Movie } from "../DataType/movieTypes";
 import ActorMovieListPage from "../ActorMovieList/ActorMovieListPage";
 
 function MovieDetailPage() {
+  const [isIndividualMovieSelected, setIndividualMovieSelected] =
+    useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -36,11 +38,14 @@ function MovieDetailPage() {
     <div>
       <h1>Movie Detail Page</h1>
 
-      <button className="previous-movie" onClick={goToPreviousMovie}>
-        Previous
-      </button>
-
-      <button onClick={goToNextMovie}>Next</button>
+      {!isIndividualMovieSelected && (
+        <>
+          <button className="previous-movie" onClick={goToPreviousMovie}>
+            Previous
+          </button>
+          <button onClick={goToNextMovie}>Next</button>
+        </>
+      )}
 
       {movie.Page ? (
         <ActorMovieListPage
@@ -48,15 +53,19 @@ function MovieDetailPage() {
             link: movie.Page,
             IndividualMoviePage: movie.IndividualMoviePage,
           }}
+          OnMovieClick={() => setIndividualMovieSelected(true)}
         />
       ) : (
         <MovieDetail movie={movie} />
       )}
-      <button className="previous-movie" onClick={goToPreviousMovie}>
-        Previous
-      </button>
-
-      <button onClick={goToNextMovie}>Next</button>
+      {!isIndividualMovieSelected && (
+        <>
+          <button className="previous-movie" onClick={goToPreviousMovie}>
+            Previous
+          </button>
+          <button onClick={goToNextMovie}>Next</button>
+        </>
+      )}
     </div>
   );
 }

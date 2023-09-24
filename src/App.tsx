@@ -11,7 +11,7 @@ import ResponsiveThreePanelPage from "./Layout/ResponsiveThreePanelPage";
 
 function App() {
   const [isBlackAndWhite, setIsBlackAndWhite] = useState(false);
-  // Load user preference from cookie when the component mounts
+
   useEffect(() => {
     const preference = Cookies.get("colorPreference");
     if (preference === "blackAndWhite") {
@@ -19,10 +19,9 @@ function App() {
     }
   }, []);
 
-  // Update user preference and cookie when the toggle button is clicked
   const handleToggleBackground = () => {
     setIsBlackAndWhite((prevState) => {
-      const newPreference = prevState ? "color" : "blackAndWhite";
+      const newPreference = prevState ? "white" : "black";
       Cookies.set("colorPreference", newPreference, { expires: 365 }); // Store preference for 1 year
       return !prevState;
     });
@@ -31,7 +30,8 @@ function App() {
   return (
     <div
       data-testid="app-container"
-      className={isBlackAndWhite ? "black-and-white" : "color"}>
+      className={isBlackAndWhite ? "black" : "white"}
+    >
       <Router>
         <Nav onToggleBackground={handleToggleBackground} />
         <Routes>

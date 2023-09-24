@@ -8,6 +8,7 @@ import "./App.css";
 import Nav from "./General/Nav";
 import Home from "./General/Home";
 import ResponsiveThreePanelPage from "./Layout/ResponsiveThreePanelPage";
+import useScrollToTop from "./General/useScrollToTop";
 
 function App() {
   const [isBlackAndWhite, setIsBlackAndWhite] = useState(false);
@@ -34,6 +35,7 @@ function App() {
     >
       <Router>
         <Nav onToggleBackground={handleToggleBackground} />
+        <ScrollToTopWrapper />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<ResponsiveThreePanelPage />} />
@@ -42,5 +44,8 @@ function App() {
     </div>
   );
 }
-
+function ScrollToTopWrapper() {
+  useScrollToTop();
+  return null;
+}
 export default App;

@@ -1,13 +1,13 @@
 .black-and-white {
-  text-align: center;
   background-color: #000;
   color: #fff;
+  text-align: center;
 }
 
 .color {
-  text-align: center;
   background-color: #f4f4f4;
   color: #000;
+  text-align: center;
 }
 
 body {
@@ -46,7 +46,7 @@ body {
 .relatedlink {
   list-style: none;
   text-decoration: none;
-  padding: 10px;
+  display: block;
 }
 
 .nav-link {
@@ -132,15 +132,21 @@ body {
 .movie p {
   margin: 0.5rem 0;
 }
+
+.privous-Next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem 1rem;
+}
+
 .responsive-three-panel-page {
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
 }
 
 .panel {
   border-top: 1px solid rgb(115, 207, 72);
-  box-sizing: border-box;
 }
 
 .panel-1 {
@@ -150,11 +156,13 @@ body {
 
 .panel-2 {
   width: 50%;
-  border-right: 1px solid rgb(115, 207, 72);
+  border-bottom: 1px solid rgb(115, 207, 72);
+  padding-right: 10px;
 }
 
 .panel-3 {
   width: 25%;
+  border-left: 1px solid rgb(115, 207, 72);
 }
 
 .relatedMoviesList {
@@ -162,7 +170,9 @@ body {
   padding: 10px;
   text-decoration: none;
   text-align: left;
+  vertical-align: top;
 }
+
 @media screen and (max-width: 900px) {
   .responsive-three-panel-page {
     flex-wrap: wrap;

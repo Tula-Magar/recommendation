@@ -36,15 +36,13 @@ function MovieDetailPage() {
 
   return (
     <div>
-      <h1>Movie Detail Page</h1>
+      <h1 className="movie-page-title">Movie Detail Page</h1>
 
       {!isIndividualMovieSelected && (
-        <>
-          <button className="previous-movie" onClick={goToPreviousMovie}>
-            Previous
-          </button>
+        <div className="privous-Next">
+          <button onClick={goToPreviousMovie}>Previous</button>
           <button onClick={goToNextMovie}>Next</button>
-        </>
+        </div>
       )}
 
       {movie.Page ? (
@@ -60,10 +58,10 @@ function MovieDetailPage() {
       )}
       {!isIndividualMovieSelected && (
         <>
-          <button className="previous-movie" onClick={goToPreviousMovie}>
-            Previous
-          </button>
-          <button onClick={goToNextMovie}>Next</button>
+          <div className="privous-Next">
+            <button onClick={goToPreviousMovie}>Previous</button>
+            <button onClick={goToNextMovie}>Next</button>
+          </div>
         </>
       )}
     </div>

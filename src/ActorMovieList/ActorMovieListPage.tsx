@@ -7,7 +7,7 @@ interface ActorMovieListPageProps {
 }
 
 const ActorMovieListPage = (props: ActorMovieListPageProps) => {
-  const [movies, setMovies] = useState<any[]>([]); // Using any for simplicity; you should define a proper type
+  const [movies, setMovies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedMovieContent, setSelectedMovieContent] =
     useState<JSX.Element | null>(null);
@@ -60,12 +60,12 @@ const ActorMovieListPage = (props: ActorMovieListPageProps) => {
               return (
                 <li style={{ listStyle: "none" }} key={movie.title}>
                   <h2
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", textAlign: "center" }}
                     onClick={() => loadMovieContent(movie)}
                   >
                     {movie.title}
                   </h2>
-                  <p>{movie.spoiler}</p>
+                  <p style={{ textAlign: "left" }}>{movie.spoiler}</p>
                 </li>
               );
             })}

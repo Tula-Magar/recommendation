@@ -4,7 +4,7 @@ import { Movie } from "../DataType/movieTypes";
 const MovieDetail: React.FC<{ movie: Movie }> = ({ movie }) => {
   return (
     <div className="movie-detail">
-      <h2>{movie.title ? movie.title : ""}</h2>
+      <h2 className="test">{movie.title ? movie.title : ""}</h2>
       <p>{movie.genre ? "Genre: " + movie.genre : ""}</p>
       {movie.imagesAndText ? (
         movie.imagesAndText.map((imageAndText, index) => (
@@ -16,7 +16,6 @@ const MovieDetail: React.FC<{ movie: Movie }> = ({ movie }) => {
       ) : (
         <div></div>
       )}
-      {/* Add more details about the movie here */}
     </div>
   );
 };

@@ -9,6 +9,11 @@
   color: #000;
   text-align: center;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -157,6 +162,7 @@ p {
 
 .panel {
   border-top: 1px solid rgb(115, 207, 72);
+  flex-shrink: 0;
 }
 
 .panel-1 {
@@ -188,7 +194,7 @@ p {
     flex-wrap: wrap;
   }
   .panel-1 {
-    width: 25%;
+    width: 20%;
   }
   .panel-2 {
     width: 75%;

@@ -61,8 +61,7 @@ const ActorMovieListPage = (props: ActorMovieListPageProps) => {
                 <li style={{ listStyle: "none" }} key={movie.title}>
                   <h2
                     style={{ cursor: "pointer", textAlign: "center" }}
-                    onClick={() => loadMovieContent(movie)}
-                  >
+                    onClick={() => loadMovieContent(movie)}>
                     {movie.title}
                   </h2>
                   <p style={{ textAlign: "left" }}>{movie.spoiler}</p>
